@@ -2,16 +2,18 @@
 
 ## OpenShift Workshop For Developers
 
-- Application Containerization
+- Getting Started
 
-- Deployment On OpenShift
+## Application Containerization
 
-- Monitoring And Logging
+## Deployment On OpenShift
 
-- Scaling
+## Monitoring And Logging
 
-- Resiliency
+## Scaling
 
-- Observability
+## Resiliency
 
-- DevSecOps (CI/CD part)
+## Observability
+
+## DevSecOps (CI/CD part)
