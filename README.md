@@ -1,2 +1,1 @@
-# ocp-dev-workshop
-An OpenShift Workshop/Hands-On lab for developers
+# OpenShift Workshop For Developers
