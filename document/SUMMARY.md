@@ -20,8 +20,8 @@
 
 ## Monitoring And Logging
 
-- View Application Logs
-- Application Monitoring With Metrics
+- [View Application Logs](monitoring-and-logging/view-application-logs.md)
+- [Application Monitoring](monitoring-and-logging/application-monitoring.md)
 
 ## Scaling
 
