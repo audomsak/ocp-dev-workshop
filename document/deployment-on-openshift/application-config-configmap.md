@@ -54,3 +54,5 @@
 5. This time you should be able to see a list of todo tasks. The application can now connect to database successfully.
 
    ![Set application configs](images/deploy-31.png)
+
+6. Play around with application e.g. add, remove tasks.
