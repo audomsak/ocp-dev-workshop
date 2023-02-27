@@ -13,11 +13,10 @@
 
 ## Deployment On OpenShift
 
-- Database Deployment Via Web Console
-- Build And Deploy Application With S2I
-- Simple Application Scaling
-- Basic YAML Manifest
-- Configure Application With ConfigMap
+- [Database Deployment Via Web Console](deployment-on-openshift/database-deployment.md)
+- [Build And Deploy Application Using S2I](deployment-on-openshift/application-deployment-s2i.md)
+- [Configure Application With ConfigMap](deployment-on-openshift/application-config-configmap.md)
+- [Simple Application Scaling](deployment-on-openshift/simple-application-scaling.md)
 
 ## Monitoring And Logging
 

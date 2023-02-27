@@ -43,7 +43,98 @@
 
    ![Enter database details](images/deploy-08.png)
 
-10. Wait until the **todo-db** node is surround with blue ring then click on the node. A panel will show up on the right side, click on the **Resources** tab to see Pods and Services.
+10. Wait until the **todo-db** node is surround with blue ring then click on the node. A panel will show up on the right side, click on the **Resources** tab to see Pods and Services. Then click on the Pod name.
 
-![Database pod is up and running](images/deploy-09.png)
+    ![Resources](images/deploy-09.png)
 
+11. Go to **Terminal** tab.
+
+    ![Open a web terminal](images/deploy-20.png)
+
+12. Enter following command. The password is `pgpassword`
+
+    ```sh
+    psql postgresql://todo-db:5432/todo?user=pguser
+    ```
+
+    _Example Output_
+
+    ```sh
+    psql (10.23)
+    Type "help" for help.
+
+    todo=#
+    ```
+
+13. Copy these SQL statements and paste to the terminal then press `Enter` on keyboard.
+
+    ```sql
+    drop table if exists Todo;
+    drop sequence if exists hibernate_sequence;
+    create sequence hibernate_sequence start 1 increment 1;
+    create table Todo (
+        id int8 not null,
+        completed boolean not null,
+        ordering int4,
+        title varchar(255),
+        url varchar(255),
+        primary key (id)
+        );
+    alter table if exists Todo
+        add constraint unique_title unique (title);
+    INSERT INTO todo(id, title, completed, ordering, url) VALUES (nextval('hibernate_sequence'), 'Introduction to Quarkus', true, 0, null);
+    INSERT INTO todo(id, title, completed, ordering, url) VALUES (nextval('hibernate_sequence'), 'Hibernate with Panache', false, 1, null);
+    INSERT INTO todo(id, title, completed, ordering, url) VALUES (nextval('hibernate_sequence'), 'Visit Quarkus web site', false, 2, 'https://quarkus.io');
+    INSERT INTO todo(id, title, completed, ordering, url) VALUES (nextval('hibernate_sequence'), 'Star Quarkus project', false, 3, 'https://github.com/quarkusio/quarkus/');
+    ```
+
+    _Example Output_
+
+    ```text
+    Type "help" for help.
+
+    postgres=# drop table if exists Todo;
+    NOTICE:  table "todo" does not exist, skipping
+    DROP TABLE
+    postgres=# drop sequence if exists hibernate_sequence;
+    NOTICE:  sequence "hibernate_sequence" does not exist, skipping
+    DROP SEQUENCE
+    postgres=# create sequence hibernate_sequence start 1 increment 1;
+    CREATE SEQUENCE
+    postgres=# create table Todo (
+    postgres(#        id int8 not null,
+    postgres(#        completed boolean not null,
+    postgres(#        ordering int4,
+    postgres(#        title varchar(255),
+    postgres(#        url varchar(255),
+    postgres(#        primary key (id)
+    postgres(#     );
+    CREATE TABLE
+    postgres=# alter table if exists Todo
+    postgres-#     add constraint unique_title unique (title);
+    ALTER TABLE
+    postgres=# INSERT INTO todo(id, title, completed, ordering, url) VALUES (nextval('hibernate_sequence'), 'Introduction to Quarkus', true, 0, null);
+    INSERT 0 1
+    postgres=# INSERT INTO todo(id, title, completed, ordering, url) VALUES (nextval('hibernate_sequence'), 'Hibernate with Panache', false, 1, null);
+    INSERT 0 1
+    postgres=# INSERT INTO todo(id, title, completed, ordering, url) VALUES (nextval('hibernate_sequence'), 'Visit Quarkus web site', false, 2, 'https://quarkus.io');
+    INSERT 0 1
+    postgres=# INSERT INTO todo(id, title, completed, ordering, url) VALUES (nextval('hibernate_sequence'), 'Star Quarkus project', false, 3, 'https://github.com/quarkusio/quarkus/');
+    INSERT 0 1
+    ```
+
+14. Run this command to verify if the table gets created.
+
+    ```sh
+    \dt
+    ```
+
+    *Example Output*
+
+    ```sh
+            List of relations
+    Schema | Name | Type  |  Owner
+    --------+------+-------+----------
+    public | todo | table | postgres
+    (1 row)
+    ```
