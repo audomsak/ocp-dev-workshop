@@ -2,14 +2,14 @@
 
 ## OpenShift Workshop For Developers
 
-- Getting Started
+- [Getting Started](getting-started.md)
 
 ## Application Containerization
 
-- Building Application
-- Application Containerization
-- Running Application Container
-- Externalize Application Configurations
+- [Building Application](application-containerization/building-application.md)
+- [Application Packaging](application-containerization/application-packaging.md)
+- [Running Application Container](application-containerization/running-application-container.md)
+- [Externalize Application Configurations](application-containerization/externalize-application-configurations.md)
 
 ## Deployment On OpenShift
 
