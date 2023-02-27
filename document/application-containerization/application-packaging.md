@@ -1,6 +1,6 @@
 # Application Packaging
 
-1. Packaging application artifact(s) as a container image using docker command where `-t` parameter is a tag for the image and `-f` parameter is the location of `Dockerfile` that defines instructions for building container image.
+1. Package application artifact(s) as a container image using docker command where `-t` parameter is a tag for the image and `-f` parameter is the location of `Dockerfile` that defines instructions for building container image.
 
    ```sh
     docker build -t docker.io/audomsak/quarkus-todo-app:1.0 -f src/main/docker/Dockerfile.uber-jar .

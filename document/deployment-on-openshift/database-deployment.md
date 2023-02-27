@@ -43,7 +43,7 @@
 
    ![Enter database details](images/deploy-08.png)
 
-10. Wait until the **todo-db** node is surround with blue ring then click on the node. A panel will show up on the right side, click on the **Resources** tab to see Pods and Services. Then click on the Pod name.
+10. Wait until the **todo-db** node is surrounded with blue ring then click on the node. A panel will show up on the right side, click on the **Resources** tab to see Pods and Services. Then click on the Pod name.
 
     ![Resources](images/deploy-09.png)
 
