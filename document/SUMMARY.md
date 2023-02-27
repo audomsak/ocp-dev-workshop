@@ -4,7 +4,7 @@
 
 - [Getting Started](getting-started.md)
 
-## [Application Containerization](application-containerization/summary.md)
+## Application Containerization
 
 - [Building Application](application-containerization/building-application.md)
 - [Application Packaging](application-containerization/application-packaging.md)
