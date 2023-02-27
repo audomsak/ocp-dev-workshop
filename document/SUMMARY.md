@@ -30,8 +30,8 @@
 
 ## Resiliency
 
-- Application Health Checks
-- Self Healing
+- [Application Health Checks](resiliency/application-health-checks.md)
+- [Self Healing](resiliency/self-healing.md)
 
 ## Observability
 
