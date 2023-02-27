@@ -25,8 +25,8 @@
 
 ## Scaling
 
-- Resources Allocation For Application
-- Horizontal Scaling Automatically
+- [Resources Allocation For Application](scaling/resource-allocation.md)
+- [Scale Application Automatically](scaling/scale-application-automatically.md)
 
 ## Resiliency
 
