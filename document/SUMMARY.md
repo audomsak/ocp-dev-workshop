@@ -33,7 +33,7 @@
 - [Application Health Checks](resiliency/application-health-checks.md)
 - [Self Healing](resiliency/self-healing.md)
 
-## Observability
+<!-- ## Observability
 
 - Logging, Metrics, and Tracing
 - Metrics Query
@@ -43,4 +43,4 @@
 
 ## DevSecOps (CI/CD part)
 
-- CI/CD Pipeline Using Jenkins
+- CI/CD Pipeline Using Jenkins -->
