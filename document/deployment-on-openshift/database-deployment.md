@@ -43,7 +43,7 @@
 
    ![Enter database details](images/deploy-08.png)
 
-10. Wait until the **todo-db** node is surrounded with blue ring then click on the node. A panel will show up on the right side, click on the **Resources** tab to see Pods and Services. Then click on the Pod name.
+10. Wait until the **todo-db** node is surround with blue ring then click on the node. A panel will show up on the right side, click on the **Resources** tab to see Pods and Services. Then click on the Pod name.
 
     ![Resources](images/deploy-09.png)
 
@@ -51,7 +51,7 @@
 
     ![Open a web terminal](images/deploy-20.png)
 
-12. Enter following command. The password is `pgpassword`
+12. Enter following command. You'll be asked to enter a password, the password is `pgpassword`.
 
     ```sh
     psql postgresql://todo-db:5432/todo?user=pguser
@@ -91,39 +91,37 @@
     _Example Output_
 
     ```text
-    Type "help" for help.
-
-    postgres=# drop table if exists Todo;
+    todo=# drop table if exists Todo;
     NOTICE:  table "todo" does not exist, skipping
     DROP TABLE
-    postgres=# drop sequence if exists hibernate_sequence;
+    todo=# drop sequence if exists hibernate_sequence;
     NOTICE:  sequence "hibernate_sequence" does not exist, skipping
     DROP SEQUENCE
-    postgres=# create sequence hibernate_sequence start 1 increment 1;
+    todo=# create sequence hibernate_sequence start 1 increment 1;
     CREATE SEQUENCE
-    postgres=# create table Todo (
-    postgres(#        id int8 not null,
-    postgres(#        completed boolean not null,
-    postgres(#        ordering int4,
-    postgres(#        title varchar(255),
-    postgres(#        url varchar(255),
-    postgres(#        primary key (id)
-    postgres(#     );
+    todo=# create table Todo (
+    todo(#        id int8 not null,
+    todo(#        completed boolean not null,
+    todo(#        ordering int4,
+    todo(#        title varchar(255),
+    todo(#        url varchar(255),
+    todo(#        primary key (id)
+    todo(#     );
     CREATE TABLE
-    postgres=# alter table if exists Todo
-    postgres-#     add constraint unique_title unique (title);
+    todo=# alter table if exists Todo
+    todo-#     add constraint unique_title unique (title);
     ALTER TABLE
-    postgres=# INSERT INTO todo(id, title, completed, ordering, url) VALUES (nextval('hibernate_sequence'), 'Introduction to Quarkus', true, 0, null);
+    todo=# INSERT INTO todo(id, title, completed, ordering, url) VALUES (nextval('hibernate_sequence'), 'Introduction to Quarkus', true, 0, null);
     INSERT 0 1
-    postgres=# INSERT INTO todo(id, title, completed, ordering, url) VALUES (nextval('hibernate_sequence'), 'Hibernate with Panache', false, 1, null);
+    todo=# INSERT INTO todo(id, title, completed, ordering, url) VALUES (nextval('hibernate_sequence'), 'Hibernate with Panache', false, 1, null);
     INSERT 0 1
-    postgres=# INSERT INTO todo(id, title, completed, ordering, url) VALUES (nextval('hibernate_sequence'), 'Visit Quarkus web site', false, 2, 'https://quarkus.io');
+    todo=# INSERT INTO todo(id, title, completed, ordering, url) VALUES (nextval('hibernate_sequence'), 'Visit Quarkus web site', false, 2, 'https://quarkus.io');
     INSERT 0 1
-    postgres=# INSERT INTO todo(id, title, completed, ordering, url) VALUES (nextval('hibernate_sequence'), 'Star Quarkus project', false, 3, 'https://github.com/quarkusio/quarkus/');
+    todo=# INSERT INTO todo(id, title, completed, ordering, url) VALUES (nextval('hibernate_sequence'), 'Star Quarkus project', false, 3, 'https://github.com/quarkusio/quarkus/');
     INSERT 0 1
     ```
 
-14. Run this command to verify if the table gets created.
+14. Enter this command to verify if the table was created.
 
     ```sh
     \dt
@@ -135,6 +133,6 @@
             List of relations
     Schema | Name | Type  |  Owner
     --------+------+-------+----------
-    public | todo | table | postgres
+    public | todo | table | pguser
     (1 row)
     ```
