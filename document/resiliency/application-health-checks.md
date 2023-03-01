@@ -32,7 +32,13 @@
 
    ![Add health checks](images/healthcheck03.png)
 
-3. Enter `/q/health/ready` as the **Path** value. Then click on the check button.
+3. Enter following inputs:
+
+   - **Path:** `/q/health/ready`
+   - **Initial delay:** `60`
+   - **Timeout:** `5`
+
+   Then click on the check button.
 
    ![Add health checks](images/healthcheck04.png)
 
@@ -40,7 +46,13 @@
 
    ![Add health checks](images/healthcheck05.png)
 
-5. Enter `/q/health/live` as the **Path** value. Then click on the check button.
+5. Enter following inputs:
+
+   - **Path:** `/q/health/live`
+   - **Initial delay:** `60`
+   - **Timeout:** `5`
+
+   Then click on the check button.
 
    ![Add health checks](images/healthcheck06.png)
 
@@ -48,7 +60,7 @@
 
    ![Add health checks](images/healthcheck07.png)
 
-7. Deployment object will deploy a new Pod with health checks settings and terminate the old one. Wait until this get completed.
+7. Deployment object will deploy a new Pod with health checks settings and terminate the old one. Wait until this completed.
 
    ![Add health checks](images/healthcheck08.png)
 
@@ -58,4 +70,4 @@
 
 9. You should see the logs indicate that `/q/health/ready` and `/q/health/live` URLs get called by `kube-probe` agent. Basically, Kubernetes/OpenShift will keep doing application health checks.
 
-   ![Add health checks](images/healthcheck10.png)
+![Add health checks](images/healthcheck10.png)
