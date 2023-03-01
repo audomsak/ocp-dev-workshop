@@ -12,7 +12,7 @@
 
    ![Create a new project](images/deploy-02.png)
 
-4. Enter the project name as **user*X*-todo** where _X_ is the number of your username. Then click **Create** button.
+4. Enter the project name as **user*X*-todo** where ***X*** is the number of your username. Then click **Create** button.
 
    ![Enter project name](images/deploy-03.png)
 
