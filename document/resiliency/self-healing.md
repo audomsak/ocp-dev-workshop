@@ -28,7 +28,7 @@
 
    ![Auto recovery](images/auto-recovery03.png)
 
-6. Run this command again and observe the `RESTARTS` value. Basically, Kubernetes/OpenShift will keep checking the Pod status for us, if it's not ready, Kubernets assume that the application container might have some issue and it'll try to restart the the container automatically.
+6. Run this command again and observe the `RESTARTS` value. Basically, Kubernetes/OpenShift will keep checking the Pod status for us, if it's not ready, Kubernetes assumes that the application container might have some issue and it'll try to restart the the container automatically.
 
    ```sh
    oc get pod

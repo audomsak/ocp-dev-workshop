@@ -1,6 +1,6 @@
 # Application Health Checks
 
-## Understanding Liveness And Readiness
+## Understand Liveness And Readiness
 
 1. Open application URL and edit the URL by replacing `todo.html` with following path:
 
@@ -8,7 +8,7 @@
    - `/q/health/live`
    - `/q/health/ready`
 
-   Our todo application already have the URLs which can be used to configure liveness and readiness probes.
+   Our To Do application already has the URLs which can be used to configure liveness and readiness probes.
 
    ![Health check URL](images/healthcheck00.png)
 
